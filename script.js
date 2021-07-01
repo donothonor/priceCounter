@@ -1,9 +1,19 @@
 const price = document.getElementById('price')
 const result = document.getElementById('result')
 const submit = document.getElementById('submit')
+const body = document.getElementById('body')
+
+submit.addEventListener('click', calculate);
 
 
-submit.addEventListener('click',() => {
+
+body.onkeypress = function (e) {
+    if (e.keyCode == 13) {
+        calculate()
+    }
+}
+
+function calculate() {
     if (price.value >= 0 && price.value < 50) result.value = Math.ceil(price.value * 3.04)
     else if (price.value >= 50 && price.value < 150) result.value = Math.ceil(price.value * 1.84)
     else if (price.value >= 150 && price.value < 400) result.value = Math.ceil(price.value * 1.59)
@@ -15,5 +25,5 @@ submit.addEventListener('click',() => {
     else if (price.value >= 4000 && price.value < 5000) result.value = Math.ceil(price.value * 1.29)
     else if (price.value >= 5000 && price.value < 7000) result.value = Math.ceil(price.value * 1.27)
     else if (price.value >= 7000 && price.value < 15000) result.value = Math.ceil(price.value * 1.24)
-    else if (price.value >= 15000) result.value = Math.ceil(price.value * 1.15)    
-})
+    else if (price.value >= 15000) result.value = Math.ceil(price.value * 1.15)  
+}
