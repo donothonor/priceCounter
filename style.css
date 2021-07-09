@@ -29,8 +29,9 @@ h1 {
 }
 
 button {
-    width: 100px;
     margin-left: 350px;
+    width: 100px;
+
 }
 #submit {
     margin-bottom: 25px;
@@ -42,9 +43,12 @@ button {
     font-style: italic;
 }
 
-@media screen and (max-width : 1300px) {
+@media screen and (max-width : 473px) {
+    button {
+        margin-left: 60px;
+    }
     .container {
-        max-width: 500px;
+        max-width: 400px;
     }
 }
 
