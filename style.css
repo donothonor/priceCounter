@@ -42,8 +42,10 @@ button {
     font-style: italic;
 }
 
-/* #result {
-    background-color: black;
-    width: 100px;
-    h100px
-} */
+@media screen and (max-width : 1300px) {
+    .container {
+        max-width: 500px;
+    }
+}
+
+
