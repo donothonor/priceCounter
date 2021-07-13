@@ -29,6 +29,8 @@ h1 {
 }
 
 button {
+    cursor: pointer;
+    border-radius: 5px;
     margin-left: 350px;
     width: 100px;
 
@@ -38,6 +40,7 @@ button {
 }
 
 .percent__result { 
+    color: red;
     margin-top: 35px;
     text-align: center;
     font-style: italic;
@@ -45,6 +48,7 @@ button {
 
 @media screen and (max-width : 1300px) {
     button {
+        height: 15px;
         margin-left: 60px;
     }
     .container {
