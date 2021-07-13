@@ -9,10 +9,10 @@ submit.addEventListener('click', calculate);
 percent.addEventListener('click', showPercentageOfMarkup);
 
 
+
 body.onkeypress = function (e) {
-    if (e.keyCode == 13) {
-        calculate()
-    }
+    if (e.keyCode == 13) calculate()
+    if (e.keyCode == 32) showPercentageOfMarkup()
 }
 
 function calculate() {
