@@ -6,13 +6,21 @@ const percentResult = document.querySelector('.percent__result')
 const percent = document.getElementById('percent')
 
 submit.addEventListener('click', calculate);
+submit.addEventListener('click', changeInputBgrndColor);
 percent.addEventListener('click', showPercentageOfMarkup);
 
 
 
 body.onkeypress = function (e) {
-    if (e.keyCode == 13) calculate()
+    if (e.keyCode == 13) {
+        calculate()
+        changeInputBgrndColor()
+    }
     if (e.keyCode == 32) showPercentageOfMarkup()
+}
+function changeInputBgrndColor () {
+    result.classList.add('background__green')
+    result.classList.add('text__white')
 }
 
 function calculate() {
@@ -61,7 +69,10 @@ function showPercentageOfMarkup () {
 
 (function () {
     price.addEventListener('click', () => {
-            price.value = ""
+        price.value = ""
+        result.value = ""
+        result.classList.remove('background__green')
+        result.classList.remove('text__white')
     })
 })()
 
