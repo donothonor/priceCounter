@@ -4,12 +4,15 @@ const submit = document.getElementById('submit')
 const body = document.getElementById('body')
 const percentResult = document.querySelector('.percent__result')
 const percent = document.getElementById('percent')
+const bigResultText = document.querySelector('.big-result__text')
+const bigResultButton = document.getElementById('big-result')
+//Слушатели событий
 
+bigResultButton.addEventListener('click', showBigResult)
 submit.addEventListener('click', calculate);
 submit.addEventListener('click', changeInputBgrndColor);
 percent.addEventListener('click', showPercentageOfMarkup);
-
-
+price.addEventListener('click', setDefault)
 
 body.onkeypress = function (e) {
     if (e.keyCode == 13) {
@@ -18,6 +21,9 @@ body.onkeypress = function (e) {
     }
     if (e.keyCode == 32) showPercentageOfMarkup()
 }
+
+
+//Функции
 function changeInputBgrndColor () {
     result.classList.add('background__green')
     result.classList.add('text__white')
@@ -60,19 +66,24 @@ function calculate() {
     } else if (price.value >= 15000) {
         result.value = `${Math.ceil(price.value * 1.15)} р.`
         percentResult.innerHTML = "НАЦЕНКА - 15%"
-    } 
+    }
+    bigResultButton.disabled = false
+    bigResultText.innerHTML = result.value
+}
+
+function showBigResult () {
+    bigResultText.classList.toggle('display__none')
 }
 
 function showPercentageOfMarkup () {
     percentResult.classList.toggle('display__none')
 }
 
-(function () {
-    price.addEventListener('click', () => {
-        price.value = ""
-        result.value = ""
-        result.classList.remove('background__green')
-        result.classList.remove('text__white')
-    })
-})()
+function setDefault () {
+    bigResultButton.disabled = true
+    price.value = ""
+    result.value = ""
+    result.classList.remove('background__green')
+    result.classList.remove('text__white')
+}
 

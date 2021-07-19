@@ -7,7 +7,7 @@ body {
     user-select: none;
 }
 .container {
-    padding-top: 250px;
+    padding-top: 100px;
     max-width: 800px;
     margin: 0 auto;
 }
@@ -46,11 +46,18 @@ button {
     color: white;
 }
 
+
 button:hover {
     box-shadow: 2px 2.5px 2.5px rgba(0, 0, 0, 0.5);
     transition: 0.3s;
 }
+button:disabled {
+    box-shadow: none;
+}
 #submit {
+    margin-bottom: 25px;
+}
+#percent {
     margin-bottom: 25px;
 }
 
@@ -60,6 +67,18 @@ button:hover {
     margin-top: 35px;
     text-align: center;
     font-style: italic;
+}
+.big-result {
+    height: 55px;
+    padding-top: 100px;
+    text-align: center;
+    margin: 0 auto;
+}
+.big-result__text {
+    font-size: 50px;
+    color: white;
+    text-align: center;
+    background-color: seagreen;
 }
 
 @media screen and (max-width : 1300px) {
