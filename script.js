@@ -20,6 +20,7 @@ body.onkeypress = function (e) {
         changeInputBgrndColor()
     }
     if (e.keyCode == 32) showPercentageOfMarkup()
+    if (e.keyCode == 107) showBigResult ()
 }
 
 
