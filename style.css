@@ -60,7 +60,10 @@ button:disabled {
 #percent {
     margin-bottom: 25px;
 }
-
+#big-result {
+    margin-top: 15px;
+    margin-left: 140px;
+}
 .percent__result {
     text-decoration: underline;
     color: red;
