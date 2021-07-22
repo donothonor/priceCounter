@@ -18,9 +18,11 @@ body.onkeypress = function (e) {
     if (e.keyCode == 13) {
         calculate()
         changeInputBgrndColor()
+        showBigResult ()
     }
-    if (e.keyCode == 32) showPercentageOfMarkup()
-    if (e.keyCode == 107) showBigResult ()
+    if (e.keyCode == 32) {
+        showPercentageOfMarkup()
+    }
 }
 
 
