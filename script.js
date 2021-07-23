@@ -66,12 +66,12 @@ function calculate() {
         result.value = `${Math.ceil(price.value * 1.15)} р.`
         percentResult.innerHTML = "НАЦЕНКА - 15%"
     }
-    bigResultButton.toggleDisableMode()
+    bigResultButton.disabled = false
     bigResultText.innerHTML = result.value
 }
 //Возвращаем дефолтное состояние
 function setDefault () {
-    bigResultButton.toggleDisableMode()
+    bigResultButton.disabled = true
     price.value = ""
     result.value = ""
     result.classList.remove('background__green')
