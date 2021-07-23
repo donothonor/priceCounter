@@ -35,12 +35,19 @@ input {
 input::placeholder {
     font-style: italic;
 }
+.buttons {
+    align-items: center;
+    flex-direction: column;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    max-width: 500px;
+}
 button {
     height: 25px;
     background-color: sandybrown;
     cursor: pointer;
     border-radius: 5px;
-    margin-left: 350px;
     width: 100px;
 
 }
@@ -76,11 +83,12 @@ button:disabled {
     text-align: center;
     font-style: italic;
 }
+#big-result {
+    align-self: flex-start;
+}
 .big-result {
     height: 55px;
     padding-top: 100px;
-    text-align: center;
-    margin: 0 auto;
 }
 .big-result__text {
     font-size: 50px;
@@ -92,16 +100,13 @@ button:disabled {
 @media screen and (max-width : 1300px) {
     button {
         height: 25px;
-        margin-left: 60px;
     }
     .container {
-        max-width: 400px;
+        max-width: 500px;
     }
-
-    #big-result {
-    margin-top: 15px;
-    margin-left: 140px;
+    .buttons {
+        flex-direction: row;
     }
-}
+}  
 
 
