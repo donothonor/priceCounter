@@ -45,7 +45,9 @@ button {
 .text__white {
     color: white;
 }
-
+.big-font_size {
+    font-size: 50px;
+}
 
 button:hover {
     box-shadow: 2px 2.5px 2.5px rgba(0, 0, 0, 0.5);
@@ -62,6 +64,7 @@ button:disabled {
 }
 
 .percent__result {
+    font-weight: bold;
     text-decoration: underline;
     color: red;
     margin-top: 35px;

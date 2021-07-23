@@ -6,23 +6,23 @@ const percentResult = document.querySelector('.percent__result')
 const percent = document.getElementById('percent')
 const bigResultText = document.querySelector('.big-result__text')
 const bigResultButton = document.getElementById('big-result')
-//Слушатели событий
 
+//Слушатели событий
 bigResultButton.addEventListener('click',  () => bigResultText.toggleDisplayMode())
+percentResult.addEventListener('click', () => percentResult.toggleBigFontSize())
 percent.addEventListener('click',  () => percentResult.toggleDisplayMode())
-submit.addEventListener('click', () => result.changeBackgroundColorGreen())
+submit.addEventListener('click', () => result.addBackgroundColorGreen())
 submit.addEventListener('click', calculate)
 price.addEventListener('click', setDefault)
+
 
 body.onkeypress = function (e) {
     if (e.keyCode == 13) {
         calculate()
-        result.changeBackgroundColorGreen()
+        result.addBackgroundColorGreen()
         bigResultText.toggleDisplayMode()
     }
-    if (e.keyCode == 32) {
-        percentResult.toggleDisplayMode()
-    }
+    if (e.keyCode == 32) percentResult.toggleDisplayMode()      
 }
 
 
@@ -66,12 +66,12 @@ function calculate() {
         result.value = `${Math.ceil(price.value * 1.15)} р.`
         percentResult.innerHTML = "НАЦЕНКА - 15%"
     }
-    bigResultButton.disabled = false
+    bigResultButton.toggleDisableMode()
     bigResultText.innerHTML = result.value
 }
 //Возвращаем дефолтное состояние
 function setDefault () {
-    bigResultButton.disabled = true
+    bigResultButton.toggleDisableMode()
     price.value = ""
     result.value = ""
     result.classList.remove('background__green')
@@ -82,8 +82,14 @@ function setDefault () {
 Object.prototype.toggleDisplayMode = function () { 
     this.classList.toggle('display__none')
 }
-Object.prototype.changeBackgroundColorGreen = function () {
+Object.prototype.addBackgroundColorGreen = function () {
     this.classList.add('background__green')
     this.classList.add('text__white')
 }    
-
+Object.prototype.toggleBigFontSize = function () {
+    this.classList.toggle('big-font_size')
+}
+Object.prototype.toggleDisableMode = function () {
+    this.disabled ? this.disabled = false : 
+                    this.disabled = true
+}
