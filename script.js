@@ -8,30 +8,26 @@ const bigResultText = document.querySelector('.big-result__text')
 const bigResultButton = document.getElementById('big-result')
 //Слушатели событий
 
-bigResultButton.addEventListener('click', showBigResult)
-submit.addEventListener('click', calculate);
-submit.addEventListener('click', changeInputBgrndColor);
-percent.addEventListener('click', showPercentageOfMarkup);
+bigResultButton.addEventListener('click',  () => bigResultText.toggleDisplayMode())
+percent.addEventListener('click',  () => percentResult.toggleDisplayMode())
+submit.addEventListener('click', () => result.changeBackgroundColorGreen())
+submit.addEventListener('click', calculate)
 price.addEventListener('click', setDefault)
 
 body.onkeypress = function (e) {
     if (e.keyCode == 13) {
         calculate()
-        changeInputBgrndColor()
-        showBigResult ()
+        result.changeBackgroundColorGreen()
+        bigResultText.toggleDisplayMode()
     }
     if (e.keyCode == 32) {
-        showPercentageOfMarkup()
+        percentResult.toggleDisplayMode()
     }
 }
 
 
 //Функции
-function changeInputBgrndColor () {
-    result.classList.add('background__green')
-    result.classList.add('text__white')
-}
-
+//Вычисляем итоговое значение
 function calculate() {
     if (price.value >= 0 && price.value < 50) {
         result.value = `${Math.ceil(price.value * 3.04)} р.`
@@ -73,15 +69,7 @@ function calculate() {
     bigResultButton.disabled = false
     bigResultText.innerHTML = result.value
 }
-
-function showBigResult () {
-    bigResultText.classList.toggle('display__none')
-}
-
-function showPercentageOfMarkup () {
-    percentResult.classList.toggle('display__none')
-}
-
+//Возвращаем дефолтное состояние
 function setDefault () {
     bigResultButton.disabled = true
     price.value = ""
@@ -89,4 +77,13 @@ function setDefault () {
     result.classList.remove('background__green')
     result.classList.remove('text__white')
 }
+
+//Методы объектов
+Object.prototype.toggleDisplayMode = function () { 
+    this.classList.toggle('display__none')
+}
+Object.prototype.changeBackgroundColorGreen = function () {
+    this.classList.add('background__green')
+    this.classList.add('text__white')
+}    
 
