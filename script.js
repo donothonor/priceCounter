@@ -16,13 +16,25 @@ submit.addEventListener('click', calculate)
 price.addEventListener('click', setDefault)
 
 
+//Слушатель событий ввода в "input"
+price.oninput = () => {
+    let strValue = price.value.toString()
+    if (strValue[strValue.length -1] === undefined) {
+        setDefault();
+        alert('Не вводите "+" и "-" в поле ввода!')
+    }   
+}
+
+// Слушатель нажитий клавиш на клавиатуре
 body.onkeypress = function (e) {
-    if (e.keyCode == 13) {
+    if (e.keyCode === 13) {
         calculate()
         result.addBackgroundColorGreen()
-        bigResultText.toggleDisplayMode()
     }
-    if (e.keyCode == 32) percentResult.toggleDisplayMode()      
+    if (e.keyCode === 32) percentResult.toggleDisplayMode() 
+    if (e.code === 'NumpadDivide') {
+        bigResultText.toggleDisplayMode()
+    }     
 }
 
 
@@ -74,6 +86,7 @@ function setDefault () {
     bigResultButton.disabled = true
     price.value = ""
     result.value = ""
+    bigResultText.classList.add('display__none')
     result.classList.remove('background__green')
     result.classList.remove('text__white')
 }
@@ -93,3 +106,4 @@ Object.prototype.toggleDisableMode = function () {
     this.disabled ? this.disabled = false : 
                     this.disabled = true
 }
+
