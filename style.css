@@ -83,9 +83,7 @@ button:disabled {
     text-align: center;
     font-style: italic;
 }
-#big-result {
-    align-self: flex-start;
-}
+
 .big-result {
     height: 55px;
     padding-top: 100px;
@@ -106,6 +104,10 @@ button:disabled {
     }
     .buttons {
         flex-direction: row;
+        align-content: space-between;
+    }
+    #big-result {
+        align-self: flex-start;
     }
 }  
 
