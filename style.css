@@ -100,9 +100,11 @@ button:disabled {
         height: 25px;
     }
     .container {
-        max-width: 500px;
+        max-width: 400px;
     }
     .buttons {
+        max-width: 500px;
+        flex-wrap: wrap;
         flex-direction: row;
         align-content: space-between;
     }
