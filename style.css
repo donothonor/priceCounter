@@ -38,10 +38,7 @@ input::placeholder {
 .buttons {
     align-items: center;
     flex-direction: column;
-    margin: 0 auto;
     display: flex;
-    justify-content: space-between;
-    max-width: 500px;
 }
 button {
     height: 25px;
@@ -95,7 +92,7 @@ button:disabled {
     background-color: seagreen;
 }
 
-@media screen and (max-width : 1300px) {
+@media all and (min-width : 1300px) {
     button {
         height: 25px;
     }
@@ -103,10 +100,8 @@ button:disabled {
         max-width: 400px;
     }
     .buttons {
-        max-width: 500px;
-        flex-wrap: wrap;
+        justify-content: space-around;
         flex-direction: row;
-        align-content: space-between;
     }
     #big-result {
         align-self: flex-start;
