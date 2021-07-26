@@ -7,7 +7,7 @@ body {
 }
 .container {
     padding-top: 100px;
-    max-width: 500px;
+    max-width: 350px;
     margin: 0 auto;
 }
 .display__none {
@@ -106,6 +106,7 @@ button:disabled {
         max-width: 800px;
     }
     .buttons {
+        max-width: inherit;
         align-items: center;
         flex-direction: column;
     }
