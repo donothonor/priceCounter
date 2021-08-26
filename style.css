@@ -88,10 +88,12 @@ button:disabled {
 }
 
 .big-result {
+    margin: 0 auto;
     height: 40px;
     padding-top: 100px;
 }
 .big-result__text {
+    
     font-size: 50px;
     color: white;
     text-align: center;
