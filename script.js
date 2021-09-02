@@ -6,7 +6,8 @@ const percentResult = document.querySelector('.percent__result')
 const percent = document.getElementById('percent')
 const bigResultText = document.querySelector('.big-result__text')
 const bigResultButton = document.getElementById('big-result')
-
+const percentageListBtn = document.querySelector('.percentage-value_btn')
+const percentageList = document.querySelector('.percentage-value_list')
 //Слушатели событий
 bigResultButton.addEventListener('click',  () => bigResultText.toggleDisplayMode())
 percentResult.addEventListener('click', () => percentResult.toggleBigFontSize())
@@ -15,7 +16,10 @@ submit.addEventListener('click', () => result.addBackgroundColorGreen())
 submit.addEventListener('click', calculate)
 price.addEventListener('click', setDefault)
 
-
+percentageListBtn.addEventListener('click', function (){
+    this.classList.toggle('clicked')
+    percentageList.classList.toggle('display__none')
+})
 
 // Слушатель нажитий клавиш на клавиатуре
 body.onkeypress = function (e) {
@@ -82,6 +86,8 @@ function setDefault () {
     result.classList.remove('background__green')
     result.classList.remove('text__white')
 }
+
+
 
 //Методы объектов
  Object.prototype.toggleDisplayMode = function () { 
