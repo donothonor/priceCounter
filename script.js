@@ -19,6 +19,7 @@ price.addEventListener('click', setDefault)
 percentageListBtn.addEventListener('click', function (){
     this.classList.toggle('clicked')
     percentageList.classList.toggle('display__none')
+    percentageList.style.top = 100 + 'px'
 })
 
 // Слушатель нажитий клавиш на клавиатуре
