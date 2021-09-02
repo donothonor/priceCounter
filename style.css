@@ -108,7 +108,7 @@ button:disabled {
 .percentage-value {
     opacity: 1;
     font-style: italic;
-    font-size: 20px;
+    font-size: 10px;
     background-color: white;
     z-index: 1000;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -182,7 +182,7 @@ button:disabled {
         font-weight: bold;
     }
     .percentage-value_btn {
-        transition: 1s all;
+        transition: 0.5s all;
         background: url(./Vector\(Stroke\).svg) no-repeat center;
         transform: rotate(-90deg);
         position: absolute;
