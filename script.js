@@ -8,6 +8,9 @@ const bigResultText = document.querySelector('.big-result__text')
 const bigResultButton = document.getElementById('big-result')
 const percentageListBtn = document.querySelector('.percentage-value_btn')
 const percentageList = document.querySelector('.percentage-value')
+const showBtn = document.querySelector('.show-button')
+
+
 //Слушатели событий
 bigResultButton.addEventListener('click',  () => bigResultText.toggleDisplayMode())
 percentResult.addEventListener('click', () => percentResult.toggleBigFontSize())
@@ -15,6 +18,7 @@ percent.addEventListener('click',  () => percentResult.toggleDisplayMode())
 submit.addEventListener('click', () => result.addBackgroundColorGreen())
 submit.addEventListener('click', calculate)
 price.addEventListener('click', setDefault)
+showBtn.addEventListener('click', () => price.toggleType())
 
 percentageListBtn.addEventListener('click', function (){
     this.classList.toggle('clicked')
@@ -32,7 +36,9 @@ body.onkeypress = function (e) {
         bigResultText.toggleDisplayMode()
     }     
 }
-
+price.oninput  = function () {
+    price.value = price.value.replace(/[^\d\+]/g,'')
+}
 
 //Функции
 //Вычисляем итоговое значение
@@ -103,5 +109,9 @@ Object.prototype.toggleBigFontSize = function () {
 Object.prototype.toggleDisableMode = function () {
     this.disabled ? this.disabled = false : 
                     this.disabled = true
+}
+Object.prototype.toggleType = function () {
+    this.type === 'password' ? this.type = 'number' :
+    this.type = 'password'
 }
 

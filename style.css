@@ -120,9 +120,6 @@ button:disabled {
 .percentage-value_list{
     margin-right: 15px;
 }
-.percentage-value_list li{
-  
-}
 .percentage-value_list span{
     color: red;
     font-weight: bold;
@@ -211,6 +208,23 @@ button:disabled {
     .hidden {
         transition: 1s all;
         margin-top: -400px;
+    }
+    .show-button {
+        cursor: pointer;
+        position: absolute;
+        background-image: url(/visibleeyevisibilityinterfacesymbol_105036.png);
+        background-position: center center;
+        background-repeat: no-repeat;
+        background-size: auto;
+        background-color: white;
+        width: 32px;
+        height: 32px;
+        top: -5px;
+        right: 50px;
+
+    }
+    .input-box {
+        position: relative;
     }
     
 }  
