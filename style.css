@@ -120,6 +120,9 @@ button:disabled {
 .percentage-value_list{
     margin-right: 15px;
 }
+.percentage-value_list li{
+    display: block;
+}
 .percentage-value_list span{
     color: red;
     font-weight: bold;
@@ -128,7 +131,7 @@ button:disabled {
     z-index: 50000;
     transition: 0.5s all;
     background: url(./Vector\(Stroke\).svg) no-repeat center;
-    transform: rotate(-90deg);
+    transform: rotate(-135deg);
     position: absolute;
     top: 0;
     left: 0;
@@ -140,13 +143,13 @@ button:disabled {
 }
 .clicked {
     transition: 0.5s all;
-    transform: rotateX(180deg);
-    transform: rotate(90deg);
+    transform: rotate(45deg);
 
 }
 .hidden {
     transition: 1s all;
     margin-top: -400px;
+    margin-left: -400px;
 }
 
 @media all and (min-width : 1300px) {
@@ -191,7 +194,7 @@ button:disabled {
         z-index: 50000;
         transition: 0.5s all;
         background: url(./Vector\(Stroke\).svg) no-repeat center;
-        transform: rotate(-90deg);
+        transform: rotate(-135deg);
         position: absolute;
         top: 0;
         left: 0;
@@ -203,8 +206,7 @@ button:disabled {
     }
     .clicked {
         transition: 0.5s all;
-        transform: rotateX(180deg);
-        transform: rotate(90deg);
+        transform: rotate(45deg);
     }
     .hidden {
         transition: 1s all;
