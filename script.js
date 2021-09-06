@@ -37,7 +37,7 @@ body.onkeypress = function (e) {
     }     
 }
 price.oninput  = function () {
-    price.value = price.value.replace(/[^\d\+]/g,'')
+    price.value = price.value.replace(/[^\d]/g,'')
 }
 
 //Функции
@@ -112,6 +112,6 @@ Object.prototype.toggleDisableMode = function () {
 }
 Object.prototype.toggleType = function () {
     this.type === 'password' ? this.type = 'number' :
-    this.type = 'password'
+                               this.type = 'password'
 }
 
