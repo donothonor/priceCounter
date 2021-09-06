@@ -37,7 +37,7 @@ body.onkeypress = function (e) {
     }     
 }
 price.oninput  = function () {
-    price.value = price.value.replace(/[^\d]/g,'')
+    price.value = price.value.replace(/[^\d\.]/g,'')
 }
 
 //Функции
@@ -91,6 +91,7 @@ function setDefault () {
     bigResultText.classList.add('display__none')
     result.classList.remove('background__green')
     result.classList.remove('text__white')
+    price.toggleType()
 }
 
 
