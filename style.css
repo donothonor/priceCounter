@@ -98,17 +98,17 @@ button:disabled {
     height: 40px;
     padding-top: 100px;
 }
-.big-result__text {
-    
+.big-result__text {   
     font-size: 50px;
     color: white;
     text-align: center;
     background-color: seagreen;
 }
 .percentage-value {
+    transition: 0.5s all;
     opacity: 1;
     font-style: italic;
-    font-size: 10px;
+    font-size: 17px;
     background-color: white;
     z-index: 1000;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
@@ -125,11 +125,12 @@ button:disabled {
     font-weight: bold;
 }
 .percentage-value_btn {
-    transition: 1s all;
+    z-index: 50000;
+    transition: 0.5s all;
     background: url(./Vector\(Stroke\).svg) no-repeat center;
     transform: rotate(-90deg);
     position: absolute;
-    top: -50px;
+    top: 0;
     left: 0;
     width: 50px;
     height: 50px;
@@ -142,6 +143,10 @@ button:disabled {
     transform: rotateX(180deg);
     transform: rotate(90deg);
 
+}
+.hidden {
+    transition: 1s all;
+    margin-top: -400px;
 }
 
 @media all and (min-width : 1300px) {
@@ -163,6 +168,7 @@ button:disabled {
         max-width: none;
     }
     .percentage-value {
+        transition: 0.5s all;
         opacity: 1;
         font-style: italic;
         font-size: 20px;
@@ -182,11 +188,12 @@ button:disabled {
         font-weight: bold;
     }
     .percentage-value_btn {
+        z-index: 50000;
         transition: 0.5s all;
         background: url(./Vector\(Stroke\).svg) no-repeat center;
         transform: rotate(-90deg);
         position: absolute;
-        top: -50px;
+        top: 0;
         left: 0;
         width: 50px;
         height: 50px;
@@ -198,7 +205,10 @@ button:disabled {
         transition: 0.5s all;
         transform: rotateX(180deg);
         transform: rotate(90deg);
-
+    }
+    .hidden {
+        transition: 1s all;
+        margin-top: -400px;
     }
     
 }  

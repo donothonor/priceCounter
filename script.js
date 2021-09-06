@@ -7,7 +7,7 @@ const percent = document.getElementById('percent')
 const bigResultText = document.querySelector('.big-result__text')
 const bigResultButton = document.getElementById('big-result')
 const percentageListBtn = document.querySelector('.percentage-value_btn')
-const percentageList = document.querySelector('.percentage-value_list')
+const percentageList = document.querySelector('.percentage-value')
 //Слушатели событий
 bigResultButton.addEventListener('click',  () => bigResultText.toggleDisplayMode())
 percentResult.addEventListener('click', () => percentResult.toggleBigFontSize())
@@ -18,8 +18,7 @@ price.addEventListener('click', setDefault)
 
 percentageListBtn.addEventListener('click', function (){
     this.classList.toggle('clicked')
-    percentageList.classList.toggle('display__none')
-    percentageList.style.top = 100 + 'px'
+    percentageList.classList.toggle('hidden')
 })
 
 // Слушатель нажитий клавиш на клавиатуре
