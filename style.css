@@ -144,7 +144,8 @@ button:disabled {
 
 }
 .hidden {
-    transition: 1s all;
+    opacity: 0;
+    transition: 3s all;
     margin-top: -400px;
     margin-left: -400px;
 }
@@ -206,13 +207,14 @@ button:disabled {
         transform: rotate(45deg);
     }
     .hidden {
+        opacity: 0;
         transition: 1s all;
         margin-top: -400px;
     }
     .show-button {
         cursor: pointer;
         position: absolute;
-        background-image: url(/visibleeyevisibilityinterfacesymbol_105036.png);
+        background-image: url(free-icon-eye-159604.svg);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: auto;

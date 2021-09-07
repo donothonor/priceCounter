@@ -91,7 +91,7 @@ function setDefault () {
     bigResultText.classList.add('display__none')
     result.classList.remove('background__green')
     result.classList.remove('text__white')
-    price.toggleType()
+    price.type = 'password'
 }
 
 
