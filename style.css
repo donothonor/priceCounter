@@ -149,7 +149,6 @@ button:disabled {
     margin-top: -400px;
     margin-left: -400px;
 }
-
 @media all and (min-width : 1300px) {
     button {
         height: 25px;
@@ -212,18 +211,17 @@ button:disabled {
         margin-top: -400px;
     }
     .show-button {
+        border-radius: 50%;
         cursor: pointer;
         position: absolute;
         background-image: url(free-icon-eye-159604.svg);
         background-position: center center;
         background-repeat: no-repeat;
         background-size: auto;
-        background-color: white;
         width: 32px;
         height: 32px;
         top: -5px;
         right: 50px;
-
     }
     .input-box {
         position: relative;

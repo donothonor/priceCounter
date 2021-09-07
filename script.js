@@ -25,6 +25,10 @@ percentageListBtn.addEventListener('click', function (){
     percentageList.classList.toggle('hidden')
 })
 
+function hideList () {
+        percentageListBtn.classList.remove('clicked')
+        percentageList.classList.add('hidden') 
+}
 // Слушатель нажитий клавиш на клавиатуре
 body.onkeypress = function (e) {
     if (e.keyCode === 13) {
