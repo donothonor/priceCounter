@@ -1,6 +1,5 @@
 const price = document.getElementById('price')
 const result = document.getElementById('result')
-const submit = document.getElementById('submit')
 const body = document.getElementById('body')
 const percentResult = document.querySelector('.percent__result')
 const percent = document.getElementById('percent')
@@ -12,11 +11,9 @@ const showBtn = document.querySelector('.show-button')
 
 
 //Слушатели событий
-bigResultButton.addEventListener('click',  () => bigResultText.toggleDisplayMode())
+bigResultButton.addEventListener('click', () => bigResultText.toggleDisplayMode())
 percentResult.addEventListener('click', () => percentResult.toggleBigFontSize())
 percent.addEventListener('click',  () => percentResult.toggleDisplayMode())
-submit.addEventListener('click', () => result.addBackgroundColorGreen())
-submit.addEventListener('click', calculate)
 price.addEventListener('click', setDefault)
 showBtn.addEventListener('click', () => price.toggleType())
 
@@ -31,10 +28,7 @@ function hideList () {
 }
 // Слушатель нажитий клавиш на клавиатуре
 body.onkeypress = function (e) {
-    if (e.keyCode === 13) {
-        calculate()
-        result.addBackgroundColorGreen()
-    }
+
     if (e.keyCode === 32) percentResult.toggleDisplayMode() 
     if (e.code === 'NumpadDivide') {
         bigResultText.toggleDisplayMode()
@@ -42,11 +36,13 @@ body.onkeypress = function (e) {
 }
 price.oninput  = function () {
     price.value = price.value.replace(/[^\d\.]/g,'')
+    calculate()
 }
 
 //Функции
 //Вычисляем итоговое значение
 function calculate() {
+    result.addBackgroundColorGreen()
     if (price.value >= 0 && price.value < 50) {
         result.value = `${Math.ceil(Math.ceil(price.value * 3.04) / 10) * 10} р.`
         percentResult.innerHTML = "НАЦЕНКА - 204%"
