@@ -44,41 +44,29 @@ price.oninput  = function () {
 function calculate() {
     result.addBackgroundColorGreen()
     if (price.value >= 0 && price.value < 50) {
-        result.value = `${Math.ceil(Math.ceil(price.value * 3.54) / 10) * 10} р.`
-        percentResult.innerHTML = "НАЦЕНКА - 254%"
+        multiply(354)
     } else if (price.value >= 50 && price.value < 150) {
-        result.value = `${Math.ceil(Math.ceil(price.value * 1.99) / 10) * 10} р.`
-        percentResult.innerHTML = "НАЦЕНКА - 99%"
+        multiply(199)
     } else if (price.value >= 150 && price.value < 400) {
-        result.value = `${Math.ceil(Math.ceil(price.value * 1.74) / 10) * 10} р.`
-        percentResult.innerHTML = "НАЦЕНКА - 74%"
+        multiply(174)
     } else if (price.value >= 400 && price.value < 800) {
-        result.value = `${Math.ceil(Math.ceil(price.value * 1.64) / 10) * 10} р.`
-        percentResult.innerHTML = "НАЦЕНКА - 64%"
+        multiply(164)
     } else if (price.value >= 800 && price.value < 1200) {
-        result.value = `${Math.ceil(Math.ceil(price.value * 1.59) / 10) * 10} р.`
-        percentResult.innerHTML = "НАЦЕНКА - 59%"
+        multiply(159)
     } else if (price.value >= 1200 && price.value < 2000) {
-        result.value = `${Math.ceil(Math.ceil(price.value * 1.54) / 10) * 10} р.`
-        percentResult.innerHTML = "НАЦЕНКА - 54%"
+        multiply(154)
     } else if (price.value >= 2000 && price.value < 3000) {
-        result.value = `${Math.ceil(Math.ceil(price.value * 1.49) / 10) * 10} р.`
-        percentResult.innerHTML = "НАЦЕНКА - 49%"
+        multiply(149)
     } else if (price.value >= 3000 && price.value < 4000) {
-        result.value = `${Math.ceil(Math.ceil(price.value * 1.47) / 10) * 10} р.`
-        percentResult.innerHTML = "НАЦЕНКА - 47%"
+        multiply(147)
     } else if (price.value >= 4000 && price.value < 5000) {
-        result.value = `${Math.ceil(Math.ceil(price.value * 1.44) / 10) * 10} р.`
-        percentResult.innerHTML = "НАЦЕНКА - 44%"
+        multiply(144)
     } else if (price.value >= 5000 && price.value < 7000) {
-        result.value = `${Math.ceil(Math.ceil(price.value * 1.42) / 10) * 10} р.`
-        percentResult.innerHTML = "НАЦЕНКА - 42%"
+        multiply(142)
     } else if (price.value >= 7000 && price.value < 15000) {
-        result.value = `${Math.ceil(Math.ceil(price.value * 1.39) / 10) * 10} р.`
-        percentResult.innerHTML = "НАЦЕНКА - 39%"
+        multiply(139)
     } else if (price.value >= 15000) {
-        result.value = `${Math.ceil(Math.ceil(price.value * 1.30) / 10) * 10} р.`
-        percentResult.innerHTML = "НАЦЕНКА - 30%"
+        multiply(130)
     }
     bigResultButton.disabled = false
     bigResultText.innerHTML = result.value
@@ -94,7 +82,10 @@ function setDefault () {
     price.type = 'password'
 }
 
-
+function multiply (multiplier) {
+    result.value = `${Math.ceil(Math.ceil(price.value * (multiplier / 100)) / 10) * 10} р.`
+    percentResult.innerHTML = `НАЦЕНКА - ${multiplier - 100}%`
+}
 
 //Методы объектов
  Object.prototype.toggleDisplayMode = function () { 
