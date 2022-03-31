@@ -44,29 +44,29 @@ price.oninput  = function () {
 function calculate() {
     result.addBackgroundColorGreen()
     if (price.value >= 0 && price.value < 50) {
-        multiply(354)
+        multiply(350)
     } else if (price.value >= 50 && price.value < 150) {
-        multiply(199)
+        multiply(191)
     } else if (price.value >= 150 && price.value < 400) {
-        multiply(174)
+        multiply(169)
     } else if (price.value >= 400 && price.value < 800) {
-        multiply(164)
+        multiply(152)
     } else if (price.value >= 800 && price.value < 1200) {
-        multiply(159)
+        multiply(146)
     } else if (price.value >= 1200 && price.value < 2000) {
-        multiply(154)
-    } else if (price.value >= 2000 && price.value < 3000) {
-        multiply(149)
-    } else if (price.value >= 3000 && price.value < 4000) {
-        multiply(147)
-    } else if (price.value >= 4000 && price.value < 5000) {
-        multiply(144)
-    } else if (price.value >= 5000 && price.value < 7000) {
         multiply(142)
-    } else if (price.value >= 7000 && price.value < 15000) {
-        multiply(139)
-    } else if (price.value >= 15000) {
+    } else if (price.value >= 2000 && price.value < 3000) {
+        multiply(138)
+    } else if (price.value >= 3000 && price.value < 4000) {
+        multiply(135)
+    } else if (price.value >= 4000 && price.value < 5000) {
+        multiply(132)
+    } else if (price.value >= 5000 && price.value < 7000) {
         multiply(130)
+    } else if (price.value >= 7000 && price.value < 15000) {
+        multiply(127)
+    } else if (price.value >= 15000) {
+        multiply(123)
     }
     bigResultButton.disabled = false
     bigResultText.innerHTML = result.value
