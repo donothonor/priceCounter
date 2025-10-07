@@ -44,29 +44,29 @@ price.oninput  = function () {
 function calculate() {
     result.addBackgroundColorGreen()
     if (price.value >= 0 && price.value < 50) {
-        multiply(350)
+        multiply(355)
     } else if (price.value >= 50 && price.value < 150) {
-        multiply(191)
+        multiply(196)
     } else if (price.value >= 150 && price.value < 400) {
-        multiply(169)
+        multiply(174)
     } else if (price.value >= 400 && price.value < 800) {
-        multiply(152)
+        multiply(157)
     } else if (price.value >= 800 && price.value < 1200) {
-        multiply(146)
+        multiply(151)
     } else if (price.value >= 1200 && price.value < 2000) {
-        multiply(142)
+        multiply(147)
     } else if (price.value >= 2000 && price.value < 3000) {
-        multiply(138)
+        multiply(143)
     } else if (price.value >= 3000 && price.value < 4000) {
-        multiply(135)
+        multiply(140)
     } else if (price.value >= 4000 && price.value < 5000) {
-        multiply(132)
+        multiply(137)
     } else if (price.value >= 5000 && price.value < 7000) {
         multiply(130)
     } else if (price.value >= 7000 && price.value < 15000) {
-        multiply(127)
+        multiply(132)
     } else if (price.value >= 15000) {
-        multiply(123)
+        multiply(128)
     }
     bigResultButton.disabled = false
     bigResultText.innerHTML = result.value
