@@ -50,13 +50,18 @@ input::placeholder {
     display: flex;
 }
 button {
-    height: 25px;
+
     background-color: sandybrown;
     cursor: pointer;
     border-radius: 5px;
     width: 100px;
 
 }
+
+.clicked-hide-button {
+    background-color: rgb(107, 51, 1)
+}
+
 .background__green {
     background-color: seagreen;
 }
@@ -78,7 +83,7 @@ button:disabled {
     margin-bottom: 25px;
 }
 #percent {
-    margin-bottom: 25px;
+    /* margin-bottom: 25px; */
 }
 #big-result {
     margin: 0 auto;

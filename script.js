@@ -8,6 +8,7 @@ const bigResultButton = document.getElementById('big-result')
 const percentageListBtn = document.querySelector('.percentage-value_btn')
 const percentageList = document.querySelector('.percentage-value')
 const showBtn = document.querySelector('.show-button')
+const hideBtn = document.getElementById('hide')
 
 
 //Слушатели событий
@@ -16,6 +17,11 @@ percentResult.addEventListener('click', () => percentResult.toggleBigFontSize())
 percent.addEventListener('click',  () => percentResult.toggleDisplayMode())
 price.addEventListener('click', setDefault)
 showBtn.addEventListener('click', () => price.toggleType())
+
+hideBtn.addEventListener('click', () => {
+    hideBtn.classList.toggle('clicked-hide-button')
+} )
+
 
 percentageListBtn.addEventListener('click', function (){
     this.classList.toggle('clicked')
@@ -43,33 +49,62 @@ price.oninput  = function () {
 //Вычисляем итоговое значение
 function calculate() {
     result.addBackgroundColorGreen()
-    if (price.value >= 0 && price.value < 50) {
-        multiply(355)
-    } else if (price.value >= 50 && price.value < 150) {
-        multiply(196)
-    } else if (price.value >= 150 && price.value < 400) {
-        multiply(174)
-    } else if (price.value >= 400 && price.value < 800) {
-        multiply(157)
-    } else if (price.value >= 800 && price.value < 1200) {
-        multiply(151)
-    } else if (price.value >= 1200 && price.value < 2000) {
-        multiply(147)
-    } else if (price.value >= 2000 && price.value < 3000) {
-        multiply(143)
-    } else if (price.value >= 3000 && price.value < 4000) {
-        multiply(140)
-    } else if (price.value >= 4000 && price.value < 5000) {
-        multiply(137)
-    } else if (price.value >= 5000 && price.value < 7000) {
-        multiply(130)
-    } else if (price.value >= 7000 && price.value < 15000) {
-        multiply(132)
-    } else if (price.value >= 15000) {
-        multiply(128)
+    if (!hideBtn.classList.contains('clicked-hide-button')) {
+        if (price.value >= 0 && price.value < 50) {
+            multiply(355)
+        } else if (price.value >= 50 && price.value < 150) {
+            multiply(196)
+        } else if (price.value >= 150 && price.value < 400) {
+            multiply(174)
+        } else if (price.value >= 400 && price.value < 800) {
+            multiply(157)
+        } else if (price.value >= 800 && price.value < 1200) {
+            multiply(151)
+        } else if (price.value >= 1200 && price.value < 2000) {
+            multiply(147)
+        } else if (price.value >= 2000 && price.value < 3000) {
+            multiply(143)
+        } else if (price.value >= 3000 && price.value < 4000) {
+            multiply(140)
+        } else if (price.value >= 4000 && price.value < 5000) {
+            multiply(137)
+        } else if (price.value >= 5000 && price.value < 7000) {
+            multiply(130)
+        } else if (price.value >= 7000 && price.value < 15000) {
+            multiply(132)
+        } else if (price.value >= 15000) {
+            multiply(128)
+        }
+    } else {
+        if (price.value >= 0 && price.value < 50) {
+            multiply(355)
+        } else if (price.value >= 50 && price.value < 150) {
+            multiply(196)
+        } else if (price.value >= 150 && price.value < 400) {
+            multiply(174)
+        } else if (price.value >= 400 && price.value < 800) {
+            multiply(157)
+        } else if (price.value >= 800 && price.value < 1200) {
+            multiply(151)
+        } else if (price.value >= 1200 && price.value < 2000) {
+            multiply(147)
+        } else if (price.value >= 2000 && price.value < 3000) {
+            multiply(145)
+        } else if (price.value >= 3000 && price.value < 4000) {
+            multiply(145)
+        } else if (price.value >= 4000 && price.value < 5000) {
+            multiply(145)
+        } else if (price.value >= 5000 && price.value < 7000) {
+            multiply(145)
+        } else if (price.value >= 7000 && price.value < 15000) {
+            multiply(145)
+        } else if (price.value >= 15000) {
+            multiply(145)
     }
+    
     bigResultButton.disabled = false
     bigResultText.innerHTML = result.value
+    }
 }
 //Возвращаем дефолтное состояние
 function setDefault () {
